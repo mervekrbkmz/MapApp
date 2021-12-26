@@ -1,0 +1,52 @@
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+}
+
+html {
+    height: 100%;
+    width: 100%;
+}
+
+.map {
+    height: calc(100% - 46px);
+    width: 100%;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: left;
+}
+
+    li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+        li a:hover {
+            background-color: #111;
+        }
+
+#btn-save {
+    background-color: #3333;
+    border: none;
+    background-color: #333 !important;
+}
+ 
+#btn-get {
+    background-color: #3333;
+    border: none;
+    background-color: #333 !important;
+}
+ 

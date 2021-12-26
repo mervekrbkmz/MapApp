@@ -1,0 +1,97 @@
+﻿@model  MapApp.ViewModels.CordinateViewModel
+@{
+    ViewBag.Title = "Home Page";
+}
+<div class="menu">
+    <ul>
+        <!-- Button trigger modal -->
+
+        <li>
+            <a href="#">
+                <button type="button" id="btn-save" onclick="AddPoint()" data-toggle="modal" data-target="#exampleModal">
+                    AddPoint
+                </button>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <button type="button" id="btn-get" onclick="getCoordinates()" data-toggle="modal" data-target="#exampleModal2">
+                    QueryPoint
+                </button>
+            </a>
+        </li>
+    </ul>
+</div>
+<div id="map" class="map">
+
+</div>
+<!-- Modal HTML -->
+<div id="myModal" class="modal fade" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"><b><i>Save Coordinates</i></b></h5>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <label>Name</label>
+                        <input class="form-control col-md-12" id="Name" type="text" />
+                    </div>
+                    <div class="col-md-12">
+                        <label>Number</label>
+                        <input class="form-control col-md-12" onkeypress="return/^-?[0-9]*$/.test(this.value+event.key)" id="Number" type="number" />
+                    </div>
+                    <div class="col-md-12">
+                        <label>X Coordinate</label>
+                        <input class="form-control col-md-12" id="Xcoordinate" disabled />
+                    </div>
+                    <div class="col-md-12">
+                        <label>Y Coordinate</label>
+                        <input class="form-control col-md-12" id="Ycoordinate" disabled />
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="postCoordinates()">Save</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@*QueryList Modal*@
+<div id="queryModal" class="modal fade" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"><b><i>Query List</i></b></h5>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <table id="dTable" class="display" style="width:100%">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Number</th>
+                            <th>X Coordinate</th>
+                            <th>X Coordinate</th>
+                        </tr>
+                    </thead> 
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+<script>
+        document.addEventListener("DOMContentLoaded", () => {
+
+            InitializeMap();
+
+            AddInteraction();
+        });
+</script>

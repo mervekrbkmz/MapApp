@@ -1,0 +1,17 @@
+{
+  "data": [
+
+    {
+      "Name": "kafe",
+      "Number": 111,
+      "xCordinate": "3632573.2707601893",
+      "yCordinate": "4904296.875003909"
+    },
+    {
+      "Name": "Hamur House",
+      "Number": 404,
+      "xCordinate": "3658256.1122640083",
+      "yCordinate": "4852931.191996271"
+    }
+  ]
+}
